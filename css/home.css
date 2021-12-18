@@ -1,0 +1,161 @@
+html{
+    overflow:auto;
+}
+body{
+    background-image: url(../img/pozadina.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar-brand{
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    height: 250px;
+    width: 250px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.nav{
+    padding: 10px;
+}
+
+.home{
+    font-size: 4ch;
+    margin-right: 50px;
+    margin-left: 150px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+
+
+.about{
+    font-size: 4ch;
+    margin-right: 50px;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+.products{
+    font-size: 4ch;
+    margin-right: 50px;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+.tabela{
+    font-size: 4ch;
+    margin-right: 50px;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+
+.paragraf{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: yellow;
+    font-size: larger;
+    /* margin: auto; */
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+hr{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+
+
+/* FORMA1 ////////////////////////////////////////////////////////////*/
+
+h3 { 
+    color: yellow !important;
+    margin: 25px;
+    position: center;
+    /* margin-left: 740px ;
+    margin-bottom: 20px; */
+}
+
+form{
+    height: fit-content;
+    width: 400px;
+    /* margin-left: 650px;
+    margin-right: 650px;
+    margin-bottom: 100px; */
+    margin: auto;
+    color: yellow;
+}
+/* .form-group{
+    width: 300px;
+    margin-left: 700px;
+} */
+.form-control{
+    background-color: transparent;
+    color: yellow;
+    
+}
+
+input[type="text"]::placeholder {  
+                  
+    /* Firefox, Chrome, Opera */ 
+    text-align: center; 
+    color: yellow;
+    border: black;
+} 
+
+
+.btn btn-outline-secondary btn-lg{
+    position: center;
+}
+
+
+button{
+    margin: auto;
+    background-color: transparent;
+    border-radius: 10px;
+    color: yellow;
+    border: black;
+    size: 3ch;
+}
+button:hover{
+    size: 4em;;
+}
+input::placeholder{
+    color: rgb(255, 210, 7);
+    text-align: center;
+    font-size: 20px;
+
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* TABELA */
+
+
+#pregled{
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: transparent;
+}
+
+.thead{
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+button:hover{
+    
+}
