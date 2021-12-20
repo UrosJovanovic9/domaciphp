@@ -24,7 +24,7 @@
 
 <div class="login-form">
         <div class="main-div">
-            <form method="post" action="#">
+            <form method="post" action="insert.php">
                 <div class="container">
                    <h2>Stranica za registraciju</h2>
                    <hr>
