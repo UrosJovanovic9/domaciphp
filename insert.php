@@ -6,7 +6,7 @@ $password = "";
 $dbname = "bazaphp";
 
 
-$connection = mysqli_connect($server,$username,$password,$dbname);
+$conn = mysqli_connect($server,$username,$password,$dbname);
 
 if(isset($_POST['submit'])){
     if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])){
@@ -14,9 +14,9 @@ if(isset($_POST['submit'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "insert into korisnik(ime,mejl,lozinka) values('$username','$email','$password')";
+        $query = "insert into korisniktabela(ime,mejl,lozinka) values('$username','$email','$password')";
 
-        $run = mysqli_query($connection,$query) or die(mysqli_error());
+        $run = mysqli_query($conn,$query) or die(mysqli_error());
 
         if($run){
             echo "Uspesno ste se prijavili!";
