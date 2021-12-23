@@ -24,28 +24,33 @@ class Kurs{
         return $conn->query($upit);
     }
 
-
-
-    public static function uzmiPoId($id, mysqli $conn){
-        $upit = "SELECT * FROM kurstabela WHERE id = $id";
-
+    public static function uzmiSvePoKorisniku($idKorisnika, mysqli $conn){
+        $upit = "SELECT * FROM kurstabela where korisnikid = $idKorisnika";
         return $conn->query($upit);
     }
 
 
-    public static function obrisiPoId(mysqli $conn){
+
+    // public static function uzmiPoId($id, mysqli $conn){
+    //     $upit = "SELECT * FROM kurstabela WHERE id = $id";
+
+    //     return $conn->query($upit);
+    // }
+
+
+    public function obrisiPoId(mysqli $conn){
         $upit = "DELETE FROM kurstabela WHERE id = $this->id";
         return $conn->query($upit);
     }
 
-    public static function dodajKurs(Kurs $kurs,mysqli $conn,){
-        $upit = "INSERT INTO kurstabela (naziv,datum,predavac,mesto,vremetrajanja) VALUES ('$kurs->naziv','$kurs->datum','$kurs->predavac','$kurs->mesto','$kurs->vremeTrajanja')";
+    public static function dodajKurs(Kurs $kurs,mysqli $conn){
+        $upit = "INSERT INTO kurstabela (naziv,datum,predavac,mesto,vremetrajanja,korisnikid) VALUES ('$kurs->naziv','$kurs->datum','$kurs->predavac','$kurs->mesto','$kurs->vremeTrajanja','$kurs->korisnikId')";
         return $conn->query($upit);
     }
 
 
     public function promeni(mysqli $conn){
-        $upit = "UPDATE kurstabela SET naziv = '$this->naziv', datum = '$this->datum',predavac = '$this->predavac', '$this->mesto','$this->vremeTrajanja'";
+        $upit = "UPDATE kurstabela SET naziv = '$this->naziv', datum = '$this->datum',predavac = '$this->predavac',mesto = '$this->mesto',vremetrajanja = '$this->vremeTrajanja' WHERE id = $this->id";
         return $conn->query($upit);
     }
 }
