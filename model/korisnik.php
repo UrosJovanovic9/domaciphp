@@ -11,11 +11,16 @@ class Korisnik {
         $this->lozinka = $lozinka;
     }
 
-    public static function logInKorisnik($kor,mysqli $conn){
-        $upit = "SELECT ime,lozinka FROM korisniktabela WHERE ime='$kor->ime'  AND lozinka = '$kor->lozinka'";
+    public static function logInKorisnik($ime,$lozinka, mysqli $conn){
+        $upit = "SELECT ime,lozinka FROM korisniktabela WHERE ime='$ime' AND lozinka = '$lozinka'";
         // echo"$upit";
         return $conn->query($upit);
         
+    }
+
+    public static function vratiIdKorisnika($ime, $lozinka, mysqli $conn){
+        $upit = "SELECT id FROM korisniktabela WHERE ime = '$ime' AND lozinka = '$lozinka'";
+        return $conn->query($upit);
     }
 }
 
