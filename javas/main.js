@@ -21,6 +21,7 @@ $("#dodajForma").submit(function () {
     } else {
       console.log("Neuspesno dodavanje kursa, molimo pokusajte ponovo!");
       console.log(odgovor);
+      location.reload(true);
     }
   });
   request.fail(function (jqXHR, poruka, greska) {
@@ -29,6 +30,7 @@ $("#dodajForma").submit(function () {
 });
 
 $("#dugmeobrisi").click(function () {
+  event.preventDefault();
   console.log("Dugme za brisanje");
   const izabranKurs = $("input[name = check]:checked");
   zahtev = $.ajax({
@@ -41,7 +43,7 @@ $("#dugmeobrisi").click(function () {
     if (odgovor == "Uspesno obrisan izabrani kurs") {
       izabranKurs.closest("tr").remove();
       alert("Uspesno ste obrisali kurs");
-      location.reload(true);
+      // location.reload(true);
       console.log("Obrisan kurs");
     } else {
       console.log("Kurs nije obrisan" + odgovor);
@@ -127,5 +129,20 @@ function sortirajRastuce() {
       redovi[i].parentNode.insertBefore(redovi[i + 1], redovi[i]);
       promena = true;
     }
+  }
+}
+
+function proveraMejla() {
+  var email = document.forms["formaregistracija"]["email"];
+  if (
+    !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/.test(
+      formaregistracija.email.value
+    )
+  ) {
+    alert("Uneli ste pogrešnu email adresu!");
+    email.focus();
+    return false;
+  } else {
+    alert("Uspesno ste se registrovali!");
   }
 }
