@@ -1,6 +1,6 @@
-html{
+/* html{
     overflow:auto;
-}
+} */
 body{
     background-image: url(../img/pozadina.jpg);
     background-size: 100% 100%;
@@ -60,12 +60,39 @@ body{
 .paragraf{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: yellow;
-    font-size: larger;
-    /* margin: auto; */
+    font-size: 45px;
+   
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.paragraf1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: yellow;
+    font-size: 35px;
+    
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 100px;
     position: relative;
+}
+
+
+.paragraf2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: yellow;
+    font-size: 25px;
+    /* margin: auto; */
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+}
+.mapa{
+    text-align: center;
 }
 
 hr{
@@ -100,6 +127,7 @@ form{
     width: 300px;
     margin-left: 700px;
 } */
+
 .form-control{
     background-color: transparent;
     color: yellow;
@@ -113,6 +141,15 @@ input[type="text"]::placeholder {
     color: yellow;
     border: black;
 } 
+input[type="date"]::placeholder{  
+                  
+    /* Firefox, Chrome, Opera */ 
+    text-align: center; 
+    color: yellow;
+    border: black;
+    width: 100%;
+}
+
 
 
 .btn btn-outline-secondary btn-lg{
@@ -148,11 +185,76 @@ input::placeholder{
     margin-left: 200px;
     margin-right: 200px;
     background-color: transparent;
+    text-align: center;
+    border-radius: 1%;
+    border-color: rgb(255, 255, 162);
+}
+
+#pregled1{
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: transparent;
+    text-align: center;
+    border-radius: 1%;
+    border-color: rgb(255, 255, 162);
 }
 
 .thead{
+    margin-top: 10px;
+    border-color: tomato;
+    border-radius: 1%;
     background-color: white;
     font-size: 20px;
     text-align: center;
 }
+
+.tbody{
+    border-radius: 7%;
+    border-color: tomato;
+    background-color: rgba(117, 189, 181, 0.699);
+    font-size: 20px;
+    text-align:justify;
+}
+
+#dugmeobrisi{
+    background-image: linear-gradient(to right, rgba(117, 189, 181, 0.699),rgba(117, 189, 181, 0.699));
+}
+#dugmeobrisi:hover{
+    background-image: linear-gradient(to right, rgba(180, 180, 180, 0.3),rgb(192, 192, 192,0.3));
+}
+
+#dugmesortiraj{
+    background-image: linear-gradient(to right, rgba(117, 189, 181, 0.699),rgba(117, 189, 181, 0.699));
+}
+
+#dugmesortiraj:hover{
+    background-image: linear-gradient(to right, rgba(180, 180, 180, 0.3),rgb(192, 192, 192,0.3));
+}
+
+#dodajNoviKurs{
+    background-image: linear-gradient(to right, rgba(117, 189, 181, 0.699),rgba(117, 189, 181, 0.699));
+}
+
+#dodajNoviKurs:hover{
+    background-image: linear-gradient(to right, rgba(180, 180, 180, 0.3),rgb(192, 192, 192,0.3));
+}
+
+#dugmepromeni{
+    background-image: linear-gradient(to right, rgba(117, 189, 181, 0.699),rgba(117, 189, 181, 0.699));
+}
+#dugmepromeni:hover{
+    background-image: linear-gradient(to right, rgba(180, 180, 180, 0.3),rgb(192, 192, 192,0.3));
+}
+
+#mojkursevi{
+    background-image: linear-gradient(to right, rgba(117, 189, 181, 0.699),rgba(117, 189, 181, 0.699));
+}
+#mojkursevi:hover{
+    background-image: linear-gradient(to right, rgba(180, 180, 180, 0.3),rgb(192, 192, 192,0.3));
+}
+
+
+
+
+
 
