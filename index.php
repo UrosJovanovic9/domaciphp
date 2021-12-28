@@ -15,10 +15,10 @@ if(isset($_POST['usernamelogin']) && isset($_POST['passwordlogin'])){
     // echo"<br>";
 
     
-    $korisnikk = new Korisnik(null,$imek,$lozinkak);
+    // $korisnikk = new Korisnik(1,$imek,$lozinkak);
     // echo"$korisnikk->ime";
     // echo"$korisnikk->lozinka";
-    $odgovor = Korisnik::logInKorisnik($korisnikk,$conn);
+    $odgovor = Korisnik::logInKorisnik($imek,$lozinkak,$conn);
 
 
 
@@ -32,16 +32,31 @@ if(isset($_POST['usernamelogin']) && isset($_POST['passwordlogin'])){
     //     echo "FALSE";
     // }
 
-    if($odgovor->num_rows==1){
-        echo ` <script>
-        console.log("Uspesno logovanje!"); 
-      </script>`;
+    
 
-      $_SESSION['user_id'] = $korisnik->id;
+    // echo "$idKorisnika";
+
+    if($odgovor->num_rows==1){
+    //     echo ` <script>
+    //     console.log("Uspesno logovanje!"); 
+    //   </script>`;
+
+
+    $result = Korisnik::vratiIdKorisnika($imek,$lozinkak,$conn);
+    $red = mysqli_fetch_assoc($result);
+    $idKorisnika = $red['id']; 
+    
+
+    //   $_SESSION['korisnik_id'] = $korisnikk->id;
+      $_SESSION['korisnik_id'] = $idKorisnika;
+      echo $_SESSION['korisnik_id'];
+    //   echo "$idKorisnika";
+    
       header('Location: home.php');
       exit();
 
     }else{
+        
         echo ` <script>
         console.log("Neuspesno prijavljivanje!"); 
       </script>`;
@@ -83,10 +98,10 @@ if(isset($_POST['usernamelogin']) && isset($_POST['passwordlogin'])){
                 <div class="container">
                    <h2>DOBRO DOSLI!</h2>
                     <!-- <label class="username">Korisnicko ime</label> -->
-                    <input placeholder = "Korisnicko ime"type="text" name="usernamelogin" class="form-control" required>
+                    <input placeholder = "Korisnicko ime"type="text" name="usernamelogin" class="form-control" required autocomplete = "off">
                     <br>
                     <!-- <label for="password">Lozinka</label> -->
-                    <input placeholder = "Lozinka" type="password" name="passwordlogin" class="form-control" required>
+                    <input placeholder = "Lozinka" type="password" name="passwordlogin" class="form-control" required autocomplete = "off">
                     <button type="submit" class="btn btn-primary" name="submit">PRIJAVI SE</button>
                     <button onclick="location.href = 'registracija.php';" type="submit" class="btn btn-primary" name="submit">REGISTRUJ SE</button>
                 </div>
